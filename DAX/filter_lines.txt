@@ -1,0 +1,11 @@
+Select_line = 
+var measureTableIsFiltered = ISFILTERED( 'unrelated table' )
+var filteredMeasure = VALUES( 'unrelated table'[Measure] )
+return
+IF( NOT( measureTableIsFiltered ) || "Measure 2" in filteredMeasure
+    ,
+    // the below DAX computes the actual measure - here a simple constant value
+    2
+    // the above DAX computes the actual measure - here a simple constant value
+    , BLANK()
+)
